@@ -1,0 +1,11 @@
+ATDD is an interesting thing. By using our step definitions to begin designing
+our object model we can can provide a GPS for our test driving.
+
+To do this kata:
+1) Define the steps for a feature (make up the object model in your steps)
+2) Run your features
+3) Test drive to remove the first exception/error you get.
+4) Repeat until the feature turns green.
+
+I would recommend rspec for your tdd framework.
+
