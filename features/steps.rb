@@ -50,7 +50,7 @@ Then /^I have (\w+) in my cart$/ do |item|
 end
 
 Then /^my cart has (\d+) items in it$/ do |count|
-  @cart.size.should == count.to_i
+  @cart.number_of_items.should == count.to_i
 end
 
 

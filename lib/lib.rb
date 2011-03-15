@@ -9,15 +9,19 @@ class Store
 end
 
 class Cart
+  def initialize
+    @number_of_items = 0
+  end
+
   def add(thing)
-    
+    @number_of_items += 1 
   end
 
   def contains?(thing)
     return true
   end
 
-  def size
-    return 1
+  def number_of_items
+    return @number_of_items
   end
 end

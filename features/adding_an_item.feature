@@ -12,13 +12,13 @@ Feature: Adding items to a cart
       | tuna       | 0.39  |
       | salmon     | 2.39  |
 
-  @wip
   Scenario: Adding an item to the cart
     Given I have an empty cart
     When I add tangerines
     Then I have tangerines in my cart
     And my cart has 1 items in it
 
+  @wip
   Scenario: adding two items to the cart
     Given I have tangerines in my cart already
     When I add bananas
