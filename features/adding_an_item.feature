@@ -1,5 +1,5 @@
 
-Feature: Adding an item
+Feature: Adding items to a cart
   In order to build a cart full of items
   As a shopper
   I want to be able to add items to my cart
@@ -14,7 +14,6 @@ Feature: Adding an item
 
   @wip
   Scenario: Adding an item to the cart
-
     Given I have an empty cart
     When I add tangerines
     Then I have tangerines in my cart
