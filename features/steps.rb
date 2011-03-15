@@ -15,11 +15,11 @@ Given /^The store has the following coupons:$/ do |coupon_table|
   pending # express the regexp above with the code you wish you had
 end
 
-Given /^the store stocks the following item types:$/ do |item_hashes|
+Given /^the store stocks the following item types:$/ do |table|
   # table is a Cucumber::Ast::Table
   @store = Store.new
-  item_hashes.hashes.each do | item_hash |
-    @store.stock item_hash
+  table.hashes.each do | attributes |
+    @store.stock attributes["name"], attributes["price"]
   end
 end
 

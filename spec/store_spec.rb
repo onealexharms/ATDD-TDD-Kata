@@ -5,9 +5,9 @@ describe Store do
     @store = Store.new
   end
 
-  it "should carry one stock_item when we add one to a new store" do
-    @store.stock({:name => "apples"})
-    @store.inventory_count.should == 0
+  it "should carry bananas when bananas are added" do
+    @store.stock("bananas", 0.59)
+    @store.stocks?("bananas").should == true
   end
 
   it "should not stock cash registers when they haven't been stocked" do

@@ -1,15 +1,16 @@
 class Store
-  def stock(thing)
-    
+  def initialize
+    @inventory = Hash.new
   end
 
-  def stocks?(item)
-    false
+  def stock(thing, price)
+    @inventory[thing] = price
   end
 
-  def inventory_count
-    0
+  def stocks?(thing)
+    @inventory.has_key?(thing)
   end
+
 end
 
 class Cart
