@@ -4,7 +4,7 @@ Feature: Checking out my items
   I want to check out
 
   Background:
-    Given the store has the following items:
+    Given the store stocks the following item types:
       | name       | price |
       | tangerines | 0.25  |
       | bananas    | 0.59  |

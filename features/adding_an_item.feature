@@ -5,7 +5,7 @@ Feature: Adding an item
   I want to be able to add items to my cart
 
   Background:
-    Given the store has the following items:
+    Given the store stocks the following item types:
       | name       | price |
       | tangerines | 0.25  |
       | bananas    | 0.59  |
@@ -25,4 +25,7 @@ Feature: Adding an item
     Then my cart has 2 items in it
     And I have bananas in my cart
 
-  Scenario: adding 
+  Scenario: adding an item which isnt for sale
+    Given I have nothing in my cart already
+    When I add cash_register
+    Then my cart has 0 items in it

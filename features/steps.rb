@@ -1,4 +1,6 @@
 require 'rspec'
+require './lib/lib.rb'
+
 Given /^I have (\w+) in my cart already$/ do | item |
   @cart = Cart.new
   @cart.add item
@@ -6,15 +8,15 @@ end
 
 
 Given /^The store has the following coupons:$/ do |coupon_table|
-
   # table is a Cucumber::Ast::Table
   pending # express the regexp above with the code you wish you had
 end
 
-Given /^the store has the following items:$/ do |item_hashes|
+Given /^the store stocks the following item types:$/ do |item_hashes|
   # table is a Cucumber::Ast::Table
+  @store = Store.new
   item_hashes.hashes.each do | item_hash |
-    Store.add item_hash
+    @store.stock item_hash
   end
 end
 
