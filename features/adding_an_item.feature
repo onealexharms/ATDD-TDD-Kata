@@ -1,3 +1,4 @@
+@wip
 Feature: Adding an item
   In order to build a cart full of items
   As a shopper

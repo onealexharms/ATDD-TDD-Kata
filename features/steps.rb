@@ -1,6 +1,7 @@
-
+require 'rspec'
 Given /^I have (\w+) in my cart already$/ do | item |
-  pending # express the regexp above with the code you wish you had
+  @cart = Cart.new
+  @cart.add item
 end
 
 
@@ -10,9 +11,11 @@ Given /^The store has the following coupons:$/ do |coupon_table|
   pending # express the regexp above with the code you wish you had
 end
 
-Given /^the store has the following items:$/ do |table|
+Given /^the store has the following items:$/ do |item_hashes|
   # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
+  item_hashes.hashes.each do | item_hash |
+    Store.add item_hash
+  end
 end
 
 Given /^I have (\d+) (\w+) in my cart$/ do |count, item|
@@ -20,7 +23,7 @@ Given /^I have (\d+) (\w+) in my cart$/ do |count, item|
 end
 
 When /^I add (\w+)$/ do |item|
-  pending # express the regexp above with the code you wish you had
+  @cart.add item
 end
 
 When /^I use coupon (\d+)$/ do |coupon|
@@ -38,11 +41,11 @@ end
 
 
 Then /^I have (\w+) in my cart$/ do |item|
-  pending # express the regexp above with the code you wish you had
+  @cart.contains?(item).should == true
 end
 
 Then /^my cart has (\d+) items in it$/ do |count|
-  pending # express the regexp above with the code you wish you had
+  @cart.size.should == count
 end
 
 
