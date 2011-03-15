@@ -16,16 +16,14 @@ Feature: Adding items to a cart
     Given I have an empty cart
     When I add tangerines
     Then I have tangerines in my cart
-    And my cart has 1 items in it
 
-  @wip
   Scenario: adding two items to the cart
     Given I have tangerines in my cart already
     When I add bananas
-    Then my cart has 2 items in it
-    And I have bananas in my cart
-
-  Scenario: adding an item which isnt for sale
-    Given I have nothing in my cart already
+    Then I have bananas in my cart
+    
+  @wip
+  Scenario: adding an item which isn't for sale
+    Given I have an empty cart
     When I add cash_register
-    Then my cart has 0 items in it
+    Then I do not have a cash_register in my cart

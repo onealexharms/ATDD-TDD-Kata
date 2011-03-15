@@ -2,11 +2,11 @@ require 'rspec'
 require 'lib'
 
 Given /^I have an empty cart$/ do
-  @cart = Cart.new
+  @cart = Cart.new @store
 end
 
 Given /^I have (\w+) in my cart already$/ do | item |
-  @cart = Cart.new
+  @cart = Cart.new @store
   @cart.add item
 end
 
@@ -49,10 +49,10 @@ Then /^I have (\w+) in my cart$/ do |item|
   @cart.contains?(item).should == true
 end
 
-Then /^my cart has (\d+) items in it$/ do |count|
-  @cart.number_of_items.should == count.to_i
-end
 
+And /^I do not have a (\w+) in my cart$/ do |item|
+  @cart.contains?(item).should == false
+end
 
 
 
