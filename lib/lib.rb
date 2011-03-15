@@ -7,3 +7,6 @@ class Store
     0
   end
 end
+
+class Cart
+end

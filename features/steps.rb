@@ -1,11 +1,14 @@
 require 'rspec'
-require './lib/lib.rb'
+require 'lib'
+
+Given /^I have an empty cart$/ do
+  @cart = Cart.new
+end
 
 Given /^I have (\w+) in my cart already$/ do | item |
   @cart = Cart.new
   @cart.add item
 end
-
 
 Given /^The store has the following coupons:$/ do |coupon_table|
   # table is a Cucumber::Ast::Table

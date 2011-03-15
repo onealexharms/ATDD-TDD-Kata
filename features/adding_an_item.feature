@@ -1,4 +1,4 @@
-@wip
+
 Feature: Adding an item
   In order to build a cart full of items
   As a shopper
@@ -12,9 +12,10 @@ Feature: Adding an item
       | tuna       | 0.39  |
       | salmon     | 2.39  |
 
+  @wip
   Scenario: Adding an item to the cart
 
-    Given I have nothing in my cart already
+    Given I have an empty cart
     When I add tangerines
     Then I have tangerines in my cart
     And my cart has 1 items in it
