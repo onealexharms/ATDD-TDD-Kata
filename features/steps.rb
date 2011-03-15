@@ -4,13 +4,13 @@ Given /^I have (\w+) in my cart already$/ do | item |
 end
 
 
-Given /^I have the following coupons$/ do |coupon_table|
+Given /^The store has the following coupons:$/ do |coupon_table|
 
   # table is a Cucumber::Ast::Table
   pending # express the regexp above with the code you wish you had
 end
 
-Given /^I have the following items:$/ do |table|
+Given /^the store has the following items:$/ do |table|
   # table is a Cucumber::Ast::Table
   pending # express the regexp above with the code you wish you had
 end

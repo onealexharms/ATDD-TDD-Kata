@@ -3,6 +3,14 @@ Feature: Adding an item
   As a shopper
   I want to be able to add items to my cart
 
+  Background:
+    Given the store has the following items:
+      | name       | price |
+      | tangerines | 0.25  |
+      | bananas    | 0.59  |
+      | tuna       | 0.39  |
+      | salmon     | 2.39  |
+
   Scenario: Adding an item to the cart
 
     Given I have nothing in my cart already
@@ -15,3 +23,5 @@ Feature: Adding an item
     When I add bananas
     Then my cart has 2 items in it
     And I have bananas in my cart
+
+  Scenario: adding 

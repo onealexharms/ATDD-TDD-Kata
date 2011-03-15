@@ -5,13 +5,13 @@ Feature:
 
 
   Background:
-    Given I have the following items:
+    Given the store has the following items:
       | name       | price |
       | tangerines | 0.25  |
       | bananas    | 0.59  |
       | tuna       | 0.39  |
       | salmon     | 2.39  |
-    And I have the following coupons
+    And The store has the following coupons:
       | code | discount |
       | 1234 | 5%       |
       | 5678 | 15%      |
